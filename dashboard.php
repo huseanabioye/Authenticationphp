@@ -22,14 +22,14 @@ $user_id = $_SESSION['user_id'];
 if (isset($user_id)) {
     $query = "SELECT * FROM users WHERE `user_id` = '$user_id' ";
     $querydb = $connet->query($query);
-    // print_r($querydb);
+    print_r($querydb);
     
     $user = $querydb->fetch_assoc();
 // TO CHECK USERS DETAILS ID
 // print_r($user_id);
 
 // TO CHECK USERS DETAILS
-    // print_r($user);
+    print_r($user);
 
     ////////
 
@@ -62,21 +62,20 @@ if (isset($user_id)) {
         <?php echo "<h1 class='display-6 text-center'> WELCOME ".$user["name"]."</h1>"; ?> 
       
        </h1>
-        <img src="<?php echo "uploads/".$user['profile_picture']?>" alt="">
-    <?php    if (file_exists('uploads/'.$user['profile_picture'])) {
+ 
+         <!-- <img src="<?php echo "uploads/".$user['profile_picture']?>" alt=""> -->
+          <img src="<?php echo "uploads/".$user['profile_picture']?>" alt=""> 
+     <?php    if (file_exists('uploads/'.$user['profile_picture'])) { 
     echo 'Image exists';
 } else {
     echo 'Image does not exist';
 }?>
-         <img src="<?php echo "uploads/".$user['profile_picture']?>" alt="">
-       
-                <form action="process_prfpic.php" enctype="multipart/form-data" method="post">
-                    <label >Upload Profile Picture</label>
-                    <input type="file" name="picture">
+                <form action="process_prfpic.php" enctype="multipart/form-data" method="POST">
+                    <label for="" >Upload Profile Picture</label><br>
+                    <input type="file" name="picture" id="profile_picture">
                     <input type="submit" name="submit" value="submit" class="btn btn-dark">
 
                 </form>    
-
                 </div>
             </div>
 
