@@ -63,16 +63,16 @@ if (isset($user_id)) {
       
        </h1>
  
-         <!-- <img src="<?php echo "uploads/".$user['profile_picture']?>" alt=""> -->
-          <img src="<?php echo "uploads/".$user['profile_picture']?>" alt=""> 
-     <?php    if (file_exists('uploads/'.$user['profile_picture'])) { 
+         <img src="<?php echo'uploads/'.$user['profile_picture']?>" alt=""style="width: 100px; height: 100px; border-radius: 100%; border: 3px groove green">
+          <!-- <img src="<?php echo"uploads/".$user["profile_picture"]?>" alt="">  -->
+     <!-- <?php    if (file_exists('uploads/'.$user["profile_picture"])) { 
     echo 'Image exists';
 } else {
     echo 'Image does not exist';
-}?>
-                <form action="process_prfpic.php" enctype="multipart/form-data" method="POST">
+}?> -->
+                <form action="process_prfpic.php" enctype="multipart/form-data" method="post">
                     <label for="" >Upload Profile Picture</label><br>
-                    <input type="file" name="picture" id="profile_picture">
+                    <input type="file" name="picture" id="profile_picture"><br>
                     <input type="submit" name="submit" value="submit" class="btn btn-dark">
 
                 </form>    
